@@ -1,5 +1,3 @@
-const http = require('http')
-
 const express = require('express')
 const bodyParser = require('body-parser')
 
@@ -18,8 +16,9 @@ app.use("/add-products", (req, res, next) => {
     )
 })
 
-app.use("/product", (req, res, next) => {
+app.post("/product", (req, res, next) => {
     console.log(req.body)
+    res.redirect('/')
 })
 
 app.use("/", (req, res, next) => {
