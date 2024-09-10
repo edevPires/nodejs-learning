@@ -3,81 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/products.css">
     <title>Shop</title>
-
-    <style>
-        *{
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body{
-            min-height: 100dvh;
-        }
-
-        .__header{
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            justify-content: center;
-            height: 100px;
-            width: 100%;
-            background-color: whitesmoke;
-            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.121);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            font-size: 1.5rem;
-        }
-
-        .__header
-        .__header__nav{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 1920px;
-            flex-grow: 1;
-        }
-
-        .__header
-        .__header__nav
-        .__header__ul{
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .__header__nav
-        .__header__ul
-        .__header__li{
-            padding: 0.3rem 1.5rem;
-            border: 1px solid black;
-            border-radius: 999rem;
-            transition: all 0.3s ease;
-        }
-
-        .__header__li:hover{
-            background-color: black;         
-        }
-        
-        .__header__nav
-        .__header__ul
-        .__header__link{
-            text-decoration: none;
-            color: black;
-            transition: all 0.3s ease;
-        }
-        
-        .__header__li:hover
-        .__header__link{
-            color: white;
-        }
-        .__main{
-            padding-top: 100px;
-        }
-    </style>
-
 </head>
 <body>
     <header class="__header">
@@ -93,7 +21,10 @@
         </nav>
     </header>
     <main class="__main">
-        <h1>List of products...</h1>
+        <h1 >List of products...</h1>
+        <div class="__list">
+            <div class="__list__item"></div>
+        </div>
     </main>
 </body>
 </html>

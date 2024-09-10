@@ -1,0 +1,16 @@
+h1{
+    color: var(--clr-pal6);
+    padding: 2rem;
+}
+
+.__main
+.__list{
+    width: 30rem;
+    height: 10rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: white;
+    border: 1px solid var(--clr-pal5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.121);
+    border-radius: 0.8rem;
+}

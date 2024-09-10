@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --clr-pal1: #262626;
+    --clr-pal2: #ACBFA4;
+    --clr-pal3: #E2E8CE;
+    --clr-pal4: #254625;
+    --clr-pal5: #3b4d3b;
+    --clr-pal6: #FF1B1C;
+}
+
+body{
+    min-height: 100dvh;
+    background-color: white;
+}
+
+.__header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+    background-color: var(--clr-pal5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.121);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.__header
+.__header__nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1920px;
+    flex-grow: 1;
+}
+
+.__header
+.__header__nav
+.__header__ul{
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.__header__nav
+.__header__ul
+.__header__li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    width: 13rem;
+    height: 100px;
+}
+
+
+.__header__nav
+.__header__ul
+.__header__link{
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--clr-pal6);
+    transition: all 0.1s ease;
+}
+
+.__header__nav
+.__header__ul
+.__header__link:hover{
+    font-weight: 800;
+}
+
+.__main{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

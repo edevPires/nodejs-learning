@@ -6,10 +6,15 @@ const bodyParser = require('body-parser')
 const app = express()
 const adminRouter = require('./routes/admin')
 const shopRouter = require('./routes/shop')
+const rootDir = require('./utils/path')
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'pug');
+app.set('views', 'pages');
 
-app.use('/admin', adminRouter)
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(rootDir, 'public')))
+
+app.use('/admin', adminRouter.routes)
 app.use(shopRouter)
 
 app.use((req, res, next) => {
@@ -17,5 +22,3 @@ app.use((req, res, next) => {
 })
 
 app.listen(3000)
-
-//     module.exports = path.dirname(require.main.filename);
