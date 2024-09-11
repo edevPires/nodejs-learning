@@ -78,6 +78,7 @@ body{
 }
 
 .__main{
+    padding: 0 1rem;
     padding-top: 100px;
     display: flex;
     flex-direction: column;
