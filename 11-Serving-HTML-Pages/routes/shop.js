@@ -8,11 +8,10 @@ const admin = require('../routes/admin')
 const router = express.Router()
 
 router.get("/", (req, res, next) => {
-    res.render('shop', { prods: admin.products })
+    res.render('shop', {
+        docTitle: 'Shop',
+        prods: admin.products,
+        path: '/'
+    })
 })
-
-router.get("/shop", (req, res, next) => {
-    res.render('shop')
-})
-
 module.exports = router

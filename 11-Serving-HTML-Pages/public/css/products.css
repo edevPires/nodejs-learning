@@ -8,6 +8,7 @@ h1{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
+    padding: 1rem 0;
 }
 
 .__prod{
@@ -20,6 +21,7 @@ h1{
     overflow: hidden;
     padding: 1rem;
     height: 30rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .__prod__img{

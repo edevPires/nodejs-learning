@@ -1,0 +1,37 @@
+<%- include('includes/head.ejs')  %>
+<link rel="stylesheet" href="/css/products.css">
+</head>
+
+<body>
+    
+    <%- include('includes/main-header.ejs')  %>
+    <main class="__main">
+        <% if (prods.length > 0) { %>
+            <div class="__grid">
+                <% for (let product of prods) { %>
+                    <div class="__prod">
+                        <img src="https://images.tcdn.com.br/img/img_prod/1285766/sketchbook_daler_rowney_simply_pocket_100g_8_9x14cm_72_folhas_105_2_ff6475b55009ebbd66bf26049b604bf4.jpg" alt="Product Image" class="__prod__img">
+                        <div class="__prod__info">
+                            <div class="__prod__title">
+                                <%= product.title  %>
+                            </div>
+                            <div class="__prod__price">
+                                <span>R$</span>
+                                <div class="__price">19,99</div>
+                            </div>
+                        </div>
+                        <div class="__prod__description">
+                            This is a blank sketchbook
+                        </div>
+                        <button class="__add">Add to cart</button>
+                    </div>
+                <% } %>
+            </div>
+        <% }  else {%>
+            <center>
+                <h1>No products found...</h1>
+            </center>
+        <% } %>
+    </main>
+
+    <%- include('includes/end.ejs')  %>
