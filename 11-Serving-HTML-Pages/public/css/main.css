@@ -1,97 +1,161 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-:root{
-    --clr-pal1: #262626;
-    --clr-pal2: #ACBFA4;
-    --clr-pal3: #E2E8CE;
-    --clr-pal4: #254625;
-    --clr-pal5: #3b4d3b;
-    --clr-pal6: #FF1B1C;
-    --clr-pal7: #ffff00;
+:root {
+  --clr-bg: whitesmoke;
+  --clr-header: #005e7c;
+  --clr-font: #ffffff;
+  --clr-font-focus: #0094c6;
+  --clr-border: rgba(255, 255, 255, 0.5);
+  --clr-pal6: #ff1b1c;
 }
 
-body{
-    min-height: 100dvh;
-    background-color: white;
+body {
+  min-height: 100dvh;
+  background-color: white;
+  background-color: var(--clr-bg);
 }
 
-h1{
-    color: var(--clr-pal6);
-    padding: 2rem;
+h1 {
+  color: var(--clr-pal6);
+  padding: 2rem;
 }
 
-.__header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    height: 100px;
-    width: 100%;
-    background-color: var(--clr-pal5);
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.121);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
+.__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  width: 100%;
+  background-color: var(--clr-header);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.121);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--clr-border);
 }
 
-.__header
-.__header__nav{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    max-width: 1920px;
-    flex-grow: 1;
+.__header .__header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 1920px;
+  flex-grow: 1;
+  width: 100%;
+  color: var(--clr-font);
 }
 
-.__header
-.__header__nav
-.__header__ul{
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.__header .__header__nav .__header__ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2.5rem;
 }
 
-.__header__nav
-.__header__ul
-.__header__li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-    width: 13rem;
-    height: 100px;
+#logo {
+  fill: white;
+  height: 2.5rem;
+  width: auto;
 }
 
-.__header__nav
-.__header__ul
-a{
-    text-decoration: none;
-    color: var(--clr-pal6);
-    transition: all 0.1s ease;
+.__header__nav .__header__ul .__header__li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
-
-.__header__nav
-.__header__ul
-a:hover{
-    color: var(--clr-pal7);
+.__header__ul .__header__li a {
+  text-decoration: none;
+  color: var(--clr-font);
+  font-weight: 500;
+  font-size: 1.1rem;
+  height: 1.5rem;
 }
 
-.active{
-    color: var(--clr-pal7) !important;
+.__header__nav .__header__ul a:hover {
+  color: var(--clr-font-focus);
 }
 
-.__main{
-    padding: 0 2rem;
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.active {
+  position: relative;
+  color: var(--clr-font-focus) !important;
+  z-index: 2;
 }
 
+.active::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 100%;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.8rem;
+}
+
+.not__active {
+  position: relative;
+  z-index: 2;
+}
+
+.not__active::before {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -20%;
+  scale: 0.7;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  opacity: 0;
+  transition: opacity 0.15s ease, translate 0.15s ease, scale 0.15s ease;
+}
+
+.not__active:hover::before {
+  opacity: 1;
+  translate: -50% -50%;
+  scale: 1;
+}
+
+.__header__btn {
+  height: 1.8rem;
+  border-radius: 0.5rem;
+  border: 0;
+  padding: 0 0.8rem;
+  font-size: 1.1rem;
+  border: 1px solid var(--clr-font);
+  color: var(--clr-font-focus);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.2s ease, background-color 0.3s ease;
+}
+
+#sign-in-btn:hover,
+#register-btn:hover {
+  background-color: var(--clr-header);
+  color: white;
+  cursor: pointer;
+}
+
+.__main {
+  padding: 0 2rem;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

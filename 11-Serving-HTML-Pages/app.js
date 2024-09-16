@@ -2,24 +2,21 @@ const path = require('path')
 
 const express = require('express')
 const bodyParser = require('body-parser')
-const ejs = require('ejs')
 
 const app = express()
-const adminRouter = require('./routes/admin')
-const shopRouter = require('./routes/shop')
-const rootDir = require('./utils/path')
+const adminRoutes = require('./routes/admin')
+const shopRoutes = require('./routes/shop')
+const errController = require('./controllers/error')
 
 app.set('view engine', 'ejs');
 app.set('views', 'pages');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(rootDir, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.use('/admin', adminRouter.routes)
-app.use(shopRouter)
+app.use('/admin', adminRoutes)
+app.use(shopRoutes)
 
-app.use((req, res, next) => {
-    res.status(404).render("404", { docTitle: 'Page not found' })
-})
+app.use(errController.pageNotFound)
 
 app.listen(3000)

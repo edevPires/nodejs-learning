@@ -1,12 +1,61 @@
 <header class="__header">
-    <nav class="__header__nav">
-        <ul class="__header__ul">
-            <li class="__header__li">
-                <a href="/" class="<%= path === '/' ? 'active' : '' %>">Shop</a>
-            </li>
-            <li class="__header__li">
-                <a href="/admin/add-product" class="<%= path === '/admin/add-product' ? 'active' : '' %>">Add Product</a>
-            </li>
-        </ul>
-    </nav>
+  <nav class="__header__nav">
+    <ul class="__header__ul">
+      <?xml version="1.0" encoding="UTF-8"?>
+      <svg
+        version="1.1"
+        viewBox="0 0 800 800"
+        width="1280"
+        height="1280"
+        xmlns="http://www.w3.org/2000/svg"
+        id="logo"
+      >
+        <path
+          transform="translate(648,90)"
+          d="m0 0h57l28 3 18 4 15 5 14 8 10 9 9 14 1 2v31l-7 14-11 14-14 14-20 15-19 12-24 13-16 8-19 9-36 15-46 17-36 12-38 12 13-2 38-9 41-11 26-8 32-12 23-10 28-14 13-7 4-1h16l10 5 6 5 6 10 2 9v7l-4 11-6 8-8 6-12 7-23 11-25 11-30 11-33 11-36 10-44 11-49 10 14-1 39-5 44-7 29-6 21-6 15-5h12l10 4 7 5 6 9 3 9v11l-3 9-8 10-11 11-14 11-13 10-19 12-18 10-15 8-32 14-36 13-33 10-44 11-42 8-46 7-11 2 23 2 21 1h23l31-2 23-3 26-5 25-7 27-9h10l11 4 8 6 6 10 2 6v13l-4 10-6 8-8 5-25 9-24 7-28 6-27 4-19 2-16 1h-47l-30-2-33-4-39-7-33-8-31-9-34-12-26-11-19-9-18-10-9-7-6-7-4-10-1-7 3-12 5-8 9-8 11-4 16 1 32 3 30 2h68l48-3 46-5 37-6 35-7h-14l-19 1h-97l-44-3-37-4-32-5-30-6-31-8-36-12-21-9-16-8-18-10-19-13-13-11-11-10-4-7-2-8-1-9-1-5v-15l7-17 10-14 8-9 16-14 18-13 29-17 36-18 28-12 27-11 39-14 36-12 35-11 53-15 64-16 45-10 53-10 44-7 39-5 30-3zm15 64-38 2-40 4-50 7-50 9-43 9-63 15-44 12-47 14-36 12-29 10-43 17-23 10-26 12-23 12-17 10-14 10-2 3 1 1 22 2h56l38-3 35-4 42-6 60-11 63-14 55-14 52-15 47-15 42-15 35-14 30-13 25-12 22-12 21-13 5-5v-2l-17-2-20-1z"
+        />
+        <path
+          transform="translate(298,645)"
+          d="m0 0h104l8 2 9 5 8 9 4 10v14l-6 12-8 8-10 4-6 1h-104l-10-3-9-7-6-9-3-9v-8l3-10 6-9 8-6 7-3z"
+        />
+      </svg>
+    </ul>
+    <ul class="__header__ul">
+      <li class="__header__li">
+        <a href="/" class="<%= path === '/' ? 'active' : 'not__active' %>"
+          >Home</a
+        >
+      </li>
+      <li class="__header__li">
+        <a
+          href="/product-list"
+          class="<%= path === '/product-list' ? 'active' : 'not__active' %>"
+          >Products</a
+        >
+      </li>
+      <li class="__header__li">
+        <a
+          href="/cart"
+          class="<%= path === '/cart' ? 'active' : 'not__active' %>"
+          >Cart</a
+        >
+      </li>
+      <li class="__header__li">
+        <a
+          href="/admin/add-product"
+          class="<%= path === '/admin/add-product' ? 'active' : 'not__active' %>"
+          >Add Product</a
+        >
+      </li>
+      <li class="__header__li">
+        <a
+          href="/admin/my-products"
+          class="<%= path === '/admin/my-products' ? 'active' : 'not__active' %>"
+          >My Products</a
+        >
+      </li>
+      <button class="__header__btn" id="sign-in-btn">Sign In</button>
+      <button class="__header__btn" id="register-btn">Register</button>
+    </ul>
+  </nav>
 </header>
