@@ -1,46 +1,54 @@
-.__form{
-    border-radius: 1rem;
-    width: 20rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 2rem;
+.__form {
+  border-radius: 1rem;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin: 2rem;
 }
 
-.__form
-label{
-    color: var(--clr-pal6);
+.__form__control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.__form
-#product
-{
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem;
-    border-radius: 0.4rem;
-    border: 2px solid var(--clr-pal6);
-    outline: 0;
+.__form label {
+  color: black;
 }
 
-.__form
-#submit{
-    width: fit-content;
-    background-color: white;
-    font-size: 1rem;
-    border: 1px solid var(--clr-pal6);
-    border-radius: 0.4rem;
-    padding: 0.3rem 1rem;
-    margin-top: 1rem;
-    transition: all 0.3s ease;
-    color: var(--clr-pal6);
-    align-self: center;
+.__form__control input,
+.__form__control textarea {
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--clr-font-focus);
+  outline: 0;
+  width: 100%;
 }
 
-#submit:hover{
-    background-color: var(--clr-pal6);
-    color: white;
-    cursor: pointer;
+.__form__control input:focus,
+.__form__control textarea:focus {
+  border: 2px solid var(--clr-font-focus);
+}
+
+.__form #submit {
+  width: fit-content;
+  background-color: white;
+  font-size: 1rem;
+  border: 1px solid var(--clr-font-focus);
+  border-radius: 0.4rem;
+  padding: 0.3rem 1rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  color: var(--clr-font-focus);
+  align-self: center;
+}
+
+#submit:hover {
+  background-color: var(--clr-font-focus);
+  color: white;
+  cursor: pointer;
 }

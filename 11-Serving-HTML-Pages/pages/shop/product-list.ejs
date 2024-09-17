@@ -10,20 +10,24 @@
             <div class="__grid">
                 <% for (let product of prods) { %>
                     <div class="__prod">
-                        <img src="https://images.tcdn.com.br/img/img_prod/1285766/sketchbook_daler_rowney_simply_pocket_100g_8_9x14cm_72_folhas_105_2_ff6475b55009ebbd66bf26049b604bf4.jpg" alt="Product Image" class="__prod__img">
+                        <img src="<%= product.imageUrl  %>" alt="Product Image" class="__prod__img">
                         <div class="__prod__info">
                             <div class="__prod__title">
                                 <%= product.title  %>
                             </div>
                             <div class="__prod__price">
                                 <span>R$</span>
-                                <div class="__price">19,99</div>
+                                <div class="__price"><%= product.price  %></div>
                             </div>
                         </div>
                         <div class="__prod__description">
-                            This is a blank sketchbook
+                            <%= product.description  %>
                         </div>
-                        <button class="__add">Add to cart</button>
+                        <div class="__btns__actions">
+                            <%product.id%>
+                            <a href="/cart/<%= product.id  %>" class="__add">Add to cart</a>
+                            <a href="/product/<%= product.id %>" class="__add">Details</a>
+                        </div>
                     </div>
                 <% } %>
             </div>

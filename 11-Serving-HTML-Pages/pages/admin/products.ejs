@@ -1,10 +1,40 @@
 <%- include('../includes/head.ejs')  %>
+<link rel="stylesheet" href="/css/products.css">
 </head>
 
 <body>
+    
     <%- include('../includes/main-header.ejs')  %>
     <main class="__main">
-        <h1>My products DUMMY</h1>
+        <% if (prods.length > 0) { %>
+            <div class="__grid">
+                <% for (let product of prods) { %>
+                    <div class="__prod">
+                        <img src="<%= product.imageUrl  %>" alt="Product Image" class="__prod__img">
+                        <div class="__prod__info">
+                            <div class="__prod__title">
+                                <%= product.title  %>
+                            </div>
+                            <div class="__prod__price">
+                                <span>R$</span>
+                                <div class="__price"><%= product.price  %></div>
+                            </div>
+                        </div>
+                        <div class="__prod__description">
+                            <%= product.description  %>
+                        </div>
+                        <div class="__btns__actions">
+                            <button class="__add">Edit</button>
+                            <button class="__add">Delete</button>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        <% }  else {%>
+            <center>
+                <h1>No products found...</h1>
+            </center>
+        <% } %>
     </main>
 
-<% include('../includes/end.ejs') %>
+    <%- include('../includes/end.ejs')  %>

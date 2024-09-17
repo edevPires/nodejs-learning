@@ -9,9 +9,13 @@ exports.getIndex = (req, res, next) => {
 }
 
 exports.getMyProducts = (req, res, next) => {
-    res.render("admin/products", {
-        path: "/admin/my-products",
-        docTitle: "My Products"
+    const products = Product.fetchAll(products => {
+        console.log(products)
+        res.render("admin/products", {
+            docTitle: "My Products",
+            prods: products,
+            path: "/products"
+        })
     })
 }
 
@@ -33,6 +37,13 @@ exports.getCart = (req, res, next) => {
     })
 }
 
+exports.getOrders = (req, res, next) => {
+    res.render("shop/orders", {
+        path: "/orders",
+        docTitle: "My Orders"
+    })
+}
+
 exports.getAddProducts = (req, res, next) => {
     res.render("admin/add-product", {
         docTitle: "Add Product",
@@ -41,9 +52,29 @@ exports.getAddProducts = (req, res, next) => {
 }
 
 exports.postAddProducts = (req, res, next) => {
-    const product = new Product(req.body.title)
-    console.log(req.body.title)
+
+    const getRandomInt = (max) => {
+        return Math.floor(Math.random() * max)
+    }
+
+    const id = getRandomInt(99999).toString()
+    const title = req.body.title
+    const imageUrl = req.body.imageUrl
+    const description = req.body.description
+    const price = req.body.price
+
+    const product = new Product(id, title, imageUrl, description, price)
     product.save()
     res.redirect("/product-list")
 }
 
+exports.getProductDetail = (req, res, next) => {
+    const productId = req.params.prodId
+    Product.findById(productId, product => {
+        res.render("shop/product-detail", {
+            prod: product,
+            docTitle: "Product Details",
+            path: "/product-list"
+        })
+    })
+}
